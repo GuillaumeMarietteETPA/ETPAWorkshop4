@@ -5,6 +5,7 @@ var config = {
 	physics: {
 		default: 'arcade',
 		arcade: {
+			gravity: { y: 500 },
 			debug: false
 		}
 	},
@@ -27,11 +28,12 @@ function init() {
 }
 
 function preload(){
-	this.load.image('background','assets/pacback.png');
-	this.load.image('point','assets/pacpoint.png');
+	this.load.image('background','assets/marioback.png');
+	this.load.image('sol','assets/sol.png');
+	this.load.image('platform','assets/platform.png');
 	
-	this.load.spritesheet('ennemy','assets/pacennemy.png',{frameWidth: 31, frameHeight: 34});
-	this.load.spritesheet('perso','assets/pac.png',{frameWidth: 31, frameHeight: 34});
+	this.load.spritesheet('ennemy','assets/marioennemy.png',{frameWidth: 31, frameHeight: 34});
+	this.load.spritesheet('perso','assets/miro.png',{frameWidth: 31, frameHeight: 34});
 }
 
 function create(){

@@ -5,7 +5,7 @@ var config = {
 	physics: {
 		default: 'arcade',
 		arcade: {
-			debug: false
+			debug: true
 		}
 	},
 	scene: {
@@ -20,7 +20,7 @@ var config = {
 var game = new Phaser.Game(config);
 
 function init() {
-	var platform;
+	var ball;
 	var player;
 	var player2;
 	var cursor;
@@ -39,11 +39,16 @@ function create(){
 	player.setCollideWorldBounds(true);
 	this.physics.add.collider(player,ball);
 
-	cursors = this.input.keyboard.createCursorKeys();
+	
 	
 	player2 = this.physics.add.sprite(984,500,'perso');
 	player2.setCollideWorldBounds(true);
 	this.physics.add.collider(player2,ball);
+
+	ball = this.physics.add.sprite(43,200,'ball');
+	ball.setCollideWorldBounds(true);
+	this.physics.add.collider(ball,player);
+
 
 }
 
