@@ -5,7 +5,6 @@ var config = {
 	physics: {
 		default: 'arcade',
 		arcade: {
-			gravity: { y: 300 },
 			debug: false
 		}
 	},
@@ -23,20 +22,28 @@ var game = new Phaser.Game(config);
 function init() {
 	var platform;
 	var player;
+	var player2;
 	var cursor;
 }
 
 function preload(){
-	this.load.image('background','assets/back.png');
-	this.load.image('sol','assets/platform.png');
-	this.load.spritesheet('perso','assets/sprite.png',{frameWidth: 27, frameHeight: 37});
+	this.load.image('background','assets/pongback.png');
+	this.load.image('ball','assets/pongball.png');
+	this.load.image('perso','assets/pongbar.png');
 }
 
 function create(){
-	this.add.image(512,310,'background');
+	this.add.image(512,380,'background');
 
-	platform = this.physics.add.staticGroup();
-	platform.create(512,670,'sol');
+	player = this.physics.add.sprite(39,200,'perso');
+	player.setCollideWorldBounds(true);
+	this.physics.add.collider(player,ball);
+
+	cursors = this.input.keyboard.createCursorKeys();
+	
+	player2 = this.physics.add.sprite(984,500,'perso');
+	player2.setCollideWorldBounds(true);
+	this.physics.add.collider(player2,ball);
 
 }
 
