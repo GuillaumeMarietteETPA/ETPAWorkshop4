@@ -29,7 +29,7 @@ function init() {
 function preload(){
 	this.load.image('background','assets/pongback.png');
 	this.load.image('ball','assets/pongball.png');
-	this.load.image('perso','assets/pongbar.png');
+	this.load.spritesheet('perso','assets/pongbar.png',{frameWidth: 15, frameHeight: 75});
 }
 
 function create(){
@@ -38,8 +38,6 @@ function create(){
 	player = this.physics.add.sprite(39,200,'perso');
 	player.setCollideWorldBounds(true);
 	this.physics.add.collider(player,ball);
-
-	
 	
 	player2 = this.physics.add.sprite(984,500,'perso');
 	player2.setCollideWorldBounds(true);

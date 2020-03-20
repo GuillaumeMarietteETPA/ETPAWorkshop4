@@ -6,3 +6,4 @@ Mario
 Personnage qui se deplace entre plusieurs monde, qui diffèrent en fonction de l'époque.
 
 Graphisme qui évolue également.
+Plus on avance dans le jeu, plus le personnage est capable de mouvement.
